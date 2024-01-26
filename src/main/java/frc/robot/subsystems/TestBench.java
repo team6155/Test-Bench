@@ -4,8 +4,10 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -17,10 +19,10 @@ public class TestBench extends SubsystemBase {
 
   /** Creates a new TestBench. */
   public TestBench() {
-    MOTOR_1 = new Spark(Constants.MOTOR_CHANNEL_1);
-    MOTOR_2 = new Spark(Constants.MOTOR_CHANNEL_2);
-    MOTOR_3 = new Spark(Constants.MOTOR_CHANNEL_3);
-    MOTOR_4 = new Spark(Constants.MOTOR_CHANNEL_4);
+    MOTOR_1 = new CANSparkMax(Constants.MOTOR_CHANNEL_1, MotorType.kBrushless);
+    MOTOR_2 = new CANSparkMax(Constants.MOTOR_CHANNEL_2, MotorType.kBrushless);
+    MOTOR_3 = new CANSparkMax(Constants.MOTOR_CHANNEL_3, MotorType.kBrushless);
+    MOTOR_4 = new CANSparkMax(Constants.MOTOR_CHANNEL_4, MotorType.kBrushless);
   }
 
   @Override
